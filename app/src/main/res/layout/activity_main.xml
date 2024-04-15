@@ -10,15 +10,17 @@
         android:id="@+id/floatingActionButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="52dp"
         android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="781dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ListView
         android:id="@+id/activity_main_lista_alunos"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
 
     </ListView>
 

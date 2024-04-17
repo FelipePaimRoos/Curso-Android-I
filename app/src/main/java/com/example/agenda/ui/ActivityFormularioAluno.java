@@ -1,5 +1,6 @@
 package com.example.agenda.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.agenda.AlunoDAO;
 import com.example.agenda.R;
 
 public class ActivityFormularioAluno extends AppCompatActivity {
@@ -20,6 +22,9 @@ public class ActivityFormularioAluno extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_aluno);
+
+        AlunoDAO alunoDAO = new AlunoDAO();
+
         final EditText campoNome = findViewById(R.id.activity_formulario_aluno_nome);
         final EditText campoTelefone = findViewById(R.id.activity_formulario_aluno_telefone);
         final EditText campoEmail = findViewById(R.id.activity_formulario_aluno_email);
@@ -37,6 +42,9 @@ public class ActivityFormularioAluno extends AppCompatActivity {
 
                 Aluno aluno = new Aluno(nome, telefone, email);
                 Toast.makeText(ActivityFormularioAluno.this, " "+aluno.getNome() + " - "+aluno.getTelefone()+ " - "+ aluno.getEmail(), Toast.LENGTH_SHORT).show();
+                alunoDAO.salvar(aluno);
+
+                startActivity(new Intent(ActivityFormularioAluno.this, ActivityListaAluno.class));
             }
             });
 

@@ -1,5 +1,7 @@
 package com.example.agenda.ui;
 
+import androidx.annotation.NonNull;
+
 public class Aluno {
     private final String nome;
     private final String telefone;
@@ -21,5 +23,11 @@ public class Aluno {
 
     public String getTelefone() {
         return telefone;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return nome;
     }
 }
